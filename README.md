@@ -11,7 +11,7 @@ CellProfiler project files (.cpproj) calculating mean fractional radial intensit
 Associated Panels: Figure 2, Figure 3, Figure 4, Figure S4, Figure S6, Figure S8, Figure S9, Figure S10A.
 Execution Note: Requires CellProfiler to load the module settings.
 
-4. spatial_intensity_analysis/folder: 
+3. pha-4-single-molecule-tracking/folder: 
 Automated segmentation and 3D subnuclear positioning workflows to quantify the nearest distances of pha-4 DNA loci and nascent pha-4 transcription foci to the nuclear periphery. Cellpose_segment.py (Laurent Guerard, IMCF): Automated deep-learning-based nuclear boundary segmentation via the Cellpose framework.
 Trackmate_LoG.py (Sebastien Herbert, IMCF): sub-pixel spot detection using the TrackMate Laplacian of Gaussian (LoG) detector. 
 Execution Note: Scripts run inside the Fiji Python interpreter and interface with a local Python/Cellpose virtual environment. Associated Panels: Figure S1.
