@@ -22,20 +22,20 @@ Standalone, CeT-pipeline-independent analysis scripts used for a paper's figures
 compared across `N2` (wt), `SM` (`cec-4, emr-1`), and `GW` (`met-2, set-25`) conditions).
 Each script is its own argparse CLI (`python -m` or `python <script>.py -h`) and can be
 run through the terminal.
-1) split_images.py
+split_images.py
 Given a folder of `.tif` image stacks, splits each stack along Z into "top" and "bottom"
 portions (fraction size set by `-d/--denominator`, default halves) and writes them into
 `top/`/`bottom/` subfolders under the output folder. Used to separate the top and bottom
 halves of nuclei for the top-vs-bottom CPD comparison. Skips images whose output already
 exists unless `-ow/--overwrite-output` is set.
-2) crop_images.py
+crop_images.py
 Given a folder of images and an objects dataframe (`.csv`), crops each object out of its
 source image and saves the crop to an output folder. Boundaries come either from a
 `boundaries` column in the df, or (with `-f/--fixed-size`) from a fixed-size box centered on
 each object's `centroid`; `-m/--margin` pads the crop, and `-k/--mask` restricts a mask crop
 to only the pixels matching that object's `object_id`. Skips existing crops unless
 `-ow/--overwrite-output` is set.
-3) regression_plots.py
+regression_plots.py
 Loads a nuclei summary dataframe and fits log-linear regressions of CPD mean intensity
 (background-removed) against the number of nuclei above each nucleus (`nuclei_above_count`),
 faceted by condition (`N2`/`SM`/`GW`). Produces an annotated regression figure (slope,
@@ -44,7 +44,7 @@ intercept, R², p-value per facet) saved as `regression.pdf`, fits an OLS intera
 conditions, runs pairwise slope comparisons (t-test contrasts, Bonferroni-corrected), and
 saves the ANOVA table, pairwise comparisons, and OLS coefficients as `.csv` files in the
 output folder.
-4) violin_plots.py
+violin_plots.py
 Loads a nuclei "halves" dataframe (expected to already carry a precomputed
 `top_bottom_ratio` and `embryo_age_group` column), tags each row with its condition from the
 image name, then plots the top/bottom CPD intensity ratio as a violin plot split by embryo
